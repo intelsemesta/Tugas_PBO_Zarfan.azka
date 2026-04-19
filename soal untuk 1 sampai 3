@@ -1,0 +1,50 @@
+Soal dan jawaban
+1.jelaskan apa yang dimaksud dengan class dan object!
+jawaban!
+Class adalah cetak biru atau kerangka dalam pembuatan program. Class merupakan prototipe yang mendefinisikan attribute dan behavior secara umum. Saat diimplementasikan ke dalam program, attribute dimodelkan sebagai variabel dan behavior dimodelkan sebagai method (function).
+Object adalah hasil instance atau penciptaan dari sebuah class. Setiap object yang diciptakan dari sebuah class akan memiliki semua variabel dan method yang dimiliki class tersebut, namun dengan nilai yang berbeda-beda tergantung nilai yang dilewatkan pada method.
+Contoh: Class Animal memiliki variabel nama, umur, dan jenis_hidup. Dari class tersebut dapat diciptakan object seperti singa, gajah, burung, dan ikan masing-masing dengan nilai atribut yang berbeda.
+
+2.Sebutkan dan jelaskan jenis-jenis method
+jawab
+Method terbagi menjadi dua jenis, yaitu:
+a. Setter (Mutator)
+Method setter adalah method yang berupa prosedur, digunakan untuk memberikan nilai pada variabel atau menampilkan nilai dari variabel. Karena sifatnya sebagai prosedur, method ini tidak memerlukan return value, sehingga menggunakan keyword void pada return type-nya.
+contoh:
+public void setNama(String nama) {
+    this.nama = nama;
+}
+
+b.Getter (Accessor)
+Method getter adalah method yang berupa fungsi, digunakan untuk mengambil nilai dari variabel. Karena sifatnya sebagai fungsi, method ini membutuhkan return value yang sesuai dengan tipe data variabel yang dikembalikan.
+contoh:
+public String getNama() {
+    return nama;
+}
+
+3.Berdasarkan gambar berikut ini, jelaskan masing-masing bagian sesuai dengan nomor yang ada!
+jawab
+public class Komputer {    -1   deklarasi class dengan nama Komputer. Keyword class digunakan untuk mendefinisikan sebuah class baru sebagai cetak biru atau kerangka program.
+    String jenis_komputer;    -2 deklarasi dua variabel atau atribut milik class Komputer. Variabel jenis_komputer menggunakan modifier default (tanpa keyword), sedangkan merk menggunakan modifier private yang berarti hanya bisa diakses di dalam class itu sendiri.
+    private String merk;
+
+    public void setDataKomputer(String jenis, String merk){
+        jenis_komputer = jenis;                  -3 method setter (mutator) bernama setDataKomputer yang digunakan untuk memberikan nilai pada variabel jenis_komputer dan merk. Menggunakan void karena tidak memerlukan return value. Keyword this digunakan karena nama parameter merk sama dengan nama variabel class.
+        this.merk = merk;
+    }
+
+    public String getJenis(){                   -4 method getter (accessor) bernama getJenis yang digunakan untuk mengambil dan mengembalikan nilai dari variabel jenis_komputer. Return type-nya adalah String sesuai tipe data variabelnya.
+        return jenis_komputer;
+    }
+
+    public String getMerk(){                    -5 method getter (accessor) bernama getMerk yang digunakan untuk mengambil dan mengembalikan nilai dari variabel merk. Return type-nya juga String.
+        return merk;
+    }
+
+    public static void main(String[]args){
+        Komputer mykom = new Komputer();              -6  instantiate atau penciptaan object bernama mykom dari class Komputer. Menggunakan operator new dengan sintaks namaClass namaObject = new namaClass().
+        mykom.setDataKomputer("LAPTOP", "MACBOOK");   -7 Ini adalah proses memanggil method setDataKomputer melalui object mykom untuk memberikan nilai "LAPTOP" pada variabel jenis_komputer dan "MACBOOK" pada variabel merk. Sintaksnya menggunakan objek.namaMethod(parameter).
+        System.out.println(mykom.getJenis());     -8 proses memanggil method getter melalui object mykom untuk mengambil dan menampilkan nilai dari variabel jenis_komputer dan merk ke layar. Outputnya akan mencetak:
+        System.out.println(mykom.getMerk());
+    }
+}
